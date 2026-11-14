@@ -56,7 +56,7 @@ Upload PDF / Word / PowerPoint documents, then ask questions and get streamed, s
    npm install
    npm run dev        # http://localhost:5173  (set VITE_API_URL if the API is not on :8000)
    ```
-4. Docker: `docker compose up --build` (use `host.docker.internal` as the MySQL host in `DATABASE_URL`). UI on :3000, API on :8000.
+4. Docker: `docker compose up --build` (UI on :3000, API on :8000). Set `DATABASE_URL` in your shell (or `backend/.env`) with host `host.docker.internal` so the container can reach MySQL on the host. Verified: both images build and the smoke test passes against the containers.
 
 ## Tests
 

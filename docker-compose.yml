@@ -2,7 +2,9 @@ services:
   backend:
     build: ./backend
     ports: ["8000:8000"]
-    env_file: ./backend/.env   # set DATABASE_URL host to host.docker.internal when using Docker
+    env_file: ./backend/.env   # DATABASE_URL must point at host.docker.internal (override via shell env DATABASE_URL)
+    environment:
+      - DATABASE_URL
     extra_hosts:
       - "host.docker.internal:host-gateway"
   frontend:
